@@ -214,7 +214,7 @@ struct get_blocks_result_v1 {
    block_position                 last_irreversible;
    fc::optional<block_position>   this_block;
    fc::optional<block_position>   prev_block;
-   optional_signed_block          block;
+   optional_signed_block          block; // packed as fc::optional<fc::static_variant<signed_block_v0, signed_block>>
    std::vector<transaction_trace> traces;
    fc::optional<bytes>            deltas;
 };
